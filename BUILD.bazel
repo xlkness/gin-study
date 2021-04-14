@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+# gazelle:prefix github.com/xlkness/gin-study
+
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+gazelle(name = "gazelle")
+
+go_library(
+    name = "gin-study_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/xlkness/gin-study",
+    visibility = ["//visibility:private"],
+    deps = ["//big_file"],
+)
+
+go_binary(
+    name = "gin-study",
+    embed = [":gin-study_lib"],
+    visibility = ["//visibility:public"],
+)

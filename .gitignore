@@ -1,0 +1,8 @@
+bazel-bin
+bazel-genfiles
+bazel-go-common
+bazel-out
+bazel-testlogs
+bazel-test
+bazel*
+.idea
